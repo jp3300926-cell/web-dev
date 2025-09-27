@@ -1,20 +1,37 @@
 html{
   font-size: 16px;
 }
-.upper-box{
+.logo-container{
   height: 5vh;
   width: 100vw;
   background-color:#578fca;
   position: absolute;
   top: 0;
   left: 0;
+  display: flex;
+  align-items: center;
+}
+.taal-logo{
+  position: absolute ;
+  right: 0;
+  width: auto;
+  height: 400%;
+  display: block;
+}
+.iamthecode-logo{
+  position: absolute ;
+  left: 1vw;
+  width: auto;
+  height: 220%;
+  display: block;
+  
 }
 .menu-container{
   position: fixed;
   top:5vh;
   left: 0;
   height: 95vh;
-  width:2vw;
+  width:5vw;
   display: flex;
   flex-direction: row;
   overflow: hidden;
@@ -30,18 +47,21 @@ html{
   gap: 1vh;
   overflow: hidden;
   transition: 1s;
+  align-items: center;
+  
 }
 .menu-open-close{
   display: flex;
   justify-content: center;
   align-items: center;
   border:none;
-  height: 2vmin;
-  width: 2vmin;
+  height: 5vmin;
+  width: 5vmin;
   background: #3674b5;
   position: absolute;
   right: 0;
   transition: 1s;
+  font-size: 4vw;
 }
 .menu-button{
   display: flex;
@@ -50,5 +70,6 @@ html{
   border: none;
   position: relative;
 white-space: nowrap;
+font-size: 3vw ;
 
 }
