@@ -1,6 +1,15 @@
+/*body*/
+.main{
+  background-image: url("mainbackground.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
 html{
   font-size: 16px;
 }
+/*upper box*/
 .logo-container{
   height: 5vh;
   width: 100vw;
@@ -24,8 +33,8 @@ html{
   width: auto;
   height: 220%;
   display: block;
-  
 }
+/*side menu*/
 .menu-container{
   position: fixed;
   top:5vh;
@@ -48,7 +57,6 @@ html{
   overflow: hidden;
   transition: 1s;
   align-items: center;
-  
 }
 .menu-open-close{
   display: flex;
@@ -57,13 +65,14 @@ html{
   border:none;
   height: 5vmin;
   width: 5vmin;
-  background: #3674b5;
+  background: #578fca;
   position: absolute;
   right: 0;
   transition: 1s;
   font-size: 4vw;
 }
 .menu-button{
+  z-index: 5;
   display: flex;
   top: 3vh;
   background: none;
@@ -71,5 +80,70 @@ html{
   position: relative;
 white-space: nowrap;
 font-size: 3vw ;
+color: white;
+}
 
+.popup-info-container{
+  height: 30vh;
+  width: 40vw;
+  position: absolute;
+  left: 20%;
+  top: 8%;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  pointer-events: none;
+}
+.menu-info-animation{
+  height: 0;
+  width: 90%;
+  transition: 1s;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: auto;
+}
+.menu-info-box{
+  height: 90%;
+  width: 80%;
+  background:#3674b5;
+  transition: 1s;
+  position: absolute;
+  overflow: hidden;
+  overflow-y: scroll;
+  word-break: break-all;
+  font-size: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  justify-content: center;
+  
+}
+.menu-info-img{
+  width: 100%;
+  height: auto;
+}
+/*button to next page*/
+.next-page-container{
+  position: absolute;
+  left: 33%;
+  top: 15%;
+  width: 40%;
+  height: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.next-page{
+  font-size: 2.5vw;
+  width: 90%;
+  height: 30%;
+  background-color: #578fca;
+ border: none;
+ border-radius: 1vw;
+ text-decoration: none ;
+ display: flex;
+ justify-content: center;
+ color: white;
 }
