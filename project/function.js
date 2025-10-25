@@ -1,17 +1,47 @@
+let phone_media = window.matchMedia("(max-width: 600px)")
 //popup side menu
 let popupmenu = document.getElementById("popup-menu");
 let menubox = document.getElementById("popup-menu-box");
 let changeicon= document.getElementById("change-icon");
+let push= document.getElementById("push_content");
 
 function popup_menu() {
-  if (popupmenu.style.width === "5vw") {
-    popupmenu.style.width = "23vw";
-    menubox.style.width = "18vw";
-    changeicon.innerHTML = "«";
+
+  if (phone_media) {
+    // mobile 
+    if (popupmenu.style.width === "5vw") {
+      popupmenu.style.width = "70vw";
+      menubox.style.width = "68vw";
+      changeicon.innerHTML = "«";
+      if (push) {
+        push.style.width = "30vw";
+      }
+    } else {
+      popupmenu.style.width = "5vw";
+      menubox.style.width = "0";
+      changeicon.innerHTML = "&#9776;";
+      if (push) {
+        push.style.width = "95vw";
+      }
+    }
+
   } else {
-    popupmenu.style.width = "5vw";
-    menubox.style.width = "0";
-    changeicon.innerHTML = "&#9776";
+    // desktop 
+    if (popupmenu.style.width === "2.5vw") {
+      popupmenu.style.width = "20.6vw";
+      menubox.style.width = "18vw";
+      changeicon.innerHTML = "«";
+      if (push) {
+        push.style.width = "77vw";
+      }
+    } else {
+      popupmenu.style.width = "2.5vw";
+      menubox.style.width = "0";
+      changeicon.innerHTML = "&#9776;";
+      if (push) {
+        push.style.width = "95vw";
+      }
+    }
   }
 }
 
@@ -72,12 +102,8 @@ learninfo.style.height = "90%";
 }
 
 function info_menu_off() {
-  contactinfo.style.height = "0";
+contactinfo.style.height = "0";
 aboutinfo.style.height = "0";
 teaminfo.style.height = "0";
 learninfo.style.height = "0";
 }
-
-
-
-

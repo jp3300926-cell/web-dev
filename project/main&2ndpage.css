@@ -1,7 +1,7 @@
 /*body*/
 .main{
-  background-image: url("mainbackground.jpg");
-  background-repeat: no-repeat;
+    background: linear-gradient(135deg, #0015bc, #000000, #008001);
+      background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
@@ -9,23 +9,18 @@
 html{
   font-size: 16px;
 }
+
 /*upper box*/
 .logo-container{
-  height: 5vh;
+  height: 8vh;
   width: 100vw;
-  background-color:#578fca;
+  background: linear-gradient(100deg, #1055C9, #000000, #41A67E 150%);
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
   display: flex;
   align-items: center;
-}
-.taal-logo{
-  position: absolute ;
-  right: 0;
-  width: auto;
-  height: 400%;
-  display: block;
 }
 .iamthecode-logo{
   position: absolute ;
@@ -34,24 +29,33 @@ html{
   height: 220%;
   display: block;
 }
+@media (max-width: 600px) {
+  .iamthecode-logo{
+    height: 200%;
+  }
+}
 /*side menu*/
 .menu-container{
   position: fixed;
-  top:5vh;
+  top:8vh;
   left: 0;
-  height: 95vh;
-  width:5vw;
+  height: 93vh;
+  width:2.5vw;
   display: flex;
   flex-direction: row;
   overflow: hidden;
   transition: 1s;
 }
+@media (max-width: 600px) {
+  .menu-container{
+    width: 5vw;}
+  }
 .menu-box{
   height: 95vh;
   width: 0;
   display: flex;
   flex-direction: column;
-  background-color: #578fca;
+ background: linear-gradient(120deg, #05339C, #000000);
   opacity: 90%;
   gap: 1vh;
   overflow: hidden;
@@ -65,11 +69,13 @@ html{
   border:none;
   height: 5vmin;
   width: 5vmin;
-  background: #578fca;
+  background: #05339C;
   position: absolute;
   right: 0;
   transition: 1s;
-  font-size: 4vw;
+  font-size: 2vw;
+  padding: 0;
+  margin: 0;
 }
 .menu-button{
   z-index: 5;
@@ -85,10 +91,10 @@ color: white;
 
 .popup-info-container{
   height: 30vh;
-  width: 40vw;
+  width: 20vw;
   position: absolute;
-  left: 20%;
-  top: 8%;
+  left: 0.09%;
+  top: 55%;
   display: flex;
   justify-content: center;
   z-index: 1;
@@ -128,22 +134,71 @@ color: white;
 .next-page-container{
   position: absolute;
   left: 33%;
-  top: 15%;
+  top: 30%;
   width: 40%;
-  height: 5%;
+  height: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.2s;
+}
+.next-page:hover{
+    width: 95%;
+  height: 35%;
+  font-size: 30wv;
 }
 .next-page{
   font-size: 2.5vw;
   width: 90%;
   height: 30%;
-  background-color: #578fca;
+  background-color: #0A3981;
  border: none;
  border-radius: 1vw;
  text-decoration: none ;
  display: flex;
  justify-content: center;
  color: white;
+ transition: 1s;
 }
+
+.journey-options-box{
+  height: 40vh;
+  width: 90%;
+  border: 1px solid black;
+    display: flex;
+align-items: center;
+justify-content: center;
+  position: absolute ;
+  gap: 2%;
+  overflow: hidden;
+  flex-wrap: wrap;
+  padding: 2px;
+  top: 20%;
+  transition: 1s;
+  left: 3%;
+}
+
+
+.journey-buttons{
+  height: 50%;
+  background-color: #3674b5;
+  aspect-ratio: 1.5/1;
+  transition: 1s;
+}
+.journey-buttons-animation{
+  height: 100%;
+  width: 95vw;
+  position: absolute;
+  right: 0;
+  border: 1px solid black ;
+  transition: 1s;
+
+}
+
+ .journeypage-bg{
+   background: linear-gradient(135deg, #0015bc, #000000, #008001);
+      background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+ }
