@@ -7,22 +7,18 @@ let push= document.getElementById("push_content");
 
 function popup_menu() {
 
-  if (phone_media) {
+  if (phone_media.matches) {
     // mobile 
-    if (popupmenu.style.width === "5vw") {
-      popupmenu.style.width = "70vw";
+    if (popupmenu.style.width === "7.5vw") {
+      popupmenu.style.width = "75.6vw";
       menubox.style.width = "68vw";
       changeicon.innerHTML = "«";
-      if (push) {
-        push.style.width = "30vw";
-      }
+      
     } else {
-      popupmenu.style.width = "5vw";
+      popupmenu.style.width = "7.5vw";
       menubox.style.width = "0";
       changeicon.innerHTML = "&#9776;";
-      if (push) {
-        push.style.width = "95vw";
-      }
+      
     }
 
   } else {
@@ -101,9 +97,32 @@ learninfo.style.height = "90%";
   }
 }
 
+//all side menu close
 function info_menu_off() {
 contactinfo.style.height = "0";
 aboutinfo.style.height = "0";
 teaminfo.style.height = "0";
 learninfo.style.height = "0";
 }
+
+// Debugging block
+console.log("=== Debugging Popup Menu ===");
+
+// Check if media query is working
+console.log("Window width:", window.innerWidth);
+console.log("Is mobile (max-width: 600px):", phone_media.matches);
+
+
+
+
+
+// Check current styles
+console.log("popupmenu width:", popupmenu.style.width);
+console.log("menubox width:", menubox.style.width);
+console.log("changeicon innerHTML:", changeicon.innerHTML);
+console.log("push width:", push ? push.style.width : "push not defined");
+
+console.log("contactinfo height:", contactinfo.style.height);
+console.log("aboutinfo height:", aboutinfo.style.height);
+console.log("teaminfo height:", teaminfo.style.height);
+console.log("learninfo height:", learninfo.style.height);

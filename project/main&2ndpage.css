@@ -1,5 +1,7 @@
+
 /*body*/
 .main{
+  font-family: serif, sans-serif;
     background: linear-gradient(135deg, #0015bc, #000000, #008001);
       background-repeat: no-repeat;
   background-position: center center;
@@ -46,10 +48,7 @@ html{
   overflow: hidden;
   transition: 1s;
 }
-@media (max-width: 600px) {
-  .menu-container{
-    width: 5vw;}
-  }
+
 .menu-box{
   height: 95vh;
   width: 0;
@@ -63,19 +62,22 @@ html{
   align-items: center;
 }
 .menu-open-close{
+  opacity: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border:none;
-  height: 5vmin;
-  width: 5vmin;
-  background: #05339C;
+  border-radius: 0 0.5rem 0.5rem 0;
+  height: 1.4%;
+  aspect-ratio: 1/1;
+  background: #091380;
   position: absolute;
   right: 0;
   transition: 1s;
   font-size: 2vw;
   padding: 0;
   margin: 0;
+  border: none;
+  color: white;
 }
 .menu-button{
   z-index: 5;
@@ -87,8 +89,24 @@ html{
 white-space: nowrap;
 font-size: 3vw ;
 color: white;
-}
+font-family: serif, sans-serif;
 
+}
+/*side menu responsive*/
+@media (max-width: 600px) {
+  .menu-container{
+    width: 8vw;
+    z-index: 1;
+  }
+    .menu-button{
+    font-size: 7vw ;}
+    .menu-open-close{
+      height: 4%;
+      font-size: 7vw;
+    }
+  }
+    
+/*popup info*/
 .popup-info-container{
   height: 30vh;
   width: 20vw;
@@ -113,7 +131,7 @@ color: white;
 .menu-info-box{
   height: 90%;
   width: 80%;
-  background:#3674b5;
+  background:#03368f;
   transition: 1s;
   position: absolute;
   overflow: hidden;
@@ -124,19 +142,30 @@ color: white;
   padding-right: 1rem;
   display: flex;
   justify-content: center;
-  
+  border-radius: 1rem;
 }
+/*info content*/
 .menu-info-img{
   width: 100%;
   height: auto;
+  border-radius: 1rem;
+}
+@media (max-width: 600px) {
+  .popup-info-container{
+    width: 68vw;
+    height: 40vh;
+  }
+  .menu-info-box{
+    font-size: 0.rem;
+  }
 }
 /*button to next page*/
 .next-page-container{
   position: absolute;
-  left: 33%;
-  top: 30%;
-  width: 40%;
-  height: 20%;
+  left: 14%;
+  top: 25%;
+  width: 70%;
+  height: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -149,22 +178,30 @@ color: white;
 }
 .next-page{
   font-size: 2.5vw;
-  width: 90%;
-  height: 30%;
-  background-color: #0A3981;
- border: none;
- border-radius: 1vw;
+  width: 100vw;
+  aspect-ratio: 3/0.5;
+  background-color: black;
+ border: 1rem solid #032752;
+ border-radius: 20rem;
  text-decoration: none ;
  display: flex;
  justify-content: center;
+ align-items: center;
  color: white;
  transition: 1s;
 }
-
+@media (max-width: 600px) {
+.next-page{
+  width: 200vw;
+  font-size: 5vw;
+  border: 0.1rem solid #032752;
+}
+  }
+    
+/*2nd page journey button's*/
 .journey-options-box{
-  height: 40vh;
+  height: 90%;
   width: 90%;
-  border: 1px solid black;
     display: flex;
 align-items: center;
 justify-content: center;
@@ -173,32 +210,115 @@ justify-content: center;
   overflow: hidden;
   flex-wrap: wrap;
   padding: 2px;
-  top: 20%;
+  top: 8%;
   transition: 1s;
   left: 3%;
+  overflow-y: scroll;
+  scroll-snap-align: y mandatory;
+  scroll-behavior: smooth;
+
 }
 
 
 .journey-buttons{
-  height: 50%;
+  font-family: serif, sans-serif;
+  height: 26%;
   background-color: #3674b5;
   aspect-ratio: 1.5/1;
   transition: 1s;
+  scroll-snap-align: start;
+scroll-margin-top: 80px;
+display: flex;
+justify-content: center;
+align-items: center;
+background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-size: auto 100%;
+  border-radius: 1rem;
+    text-shadow: 
+    1px 1px 0 black,
+    1px 1px 0 black,
+    1px 1px 0 black,   
+    1px 1px 0 black;  
+    color:white;
+    overflow: hidden;
+}
+/*journey button's design*/
+.journey-buttons:nth-child(1){
+  background-image: url(encounter.png);
+  background-color: #FFD700;
+  font-size: 10vw;
+}
+.journey-buttons:nth-child(2){
+  background-image: url(technical_setup.png);
+  background-color: #C0C0C0;
+  font-size: 7vw;
+}
+.journey-buttons:nth-child(3){
+  background-image: url(focus&absorb.png);
+  background-color: #FFB700;
+  font-size: 8vw;
+}
+.journey-buttons:nth-child(4) {
+  background-image: url(presence.png);
+  background-color: #FFC107;
+  font-size: 10vw;
+}
+.journey-buttons:nth-child(5) {
+  background-image: url(task_coordination.png);
+  background-color: #DAF7A6;
+  font-size: 6vw;
+}
+.journey-buttons:nth-child(6) {
+  background-image: url(accomplishment.png);
+  background-color: #FFD700;
+  font-size: 7vw;
+}
+.journey-buttons-link{
+  text-decoration: none;
+  padding: 100%;
+  color: inherit;
 }
 .journey-buttons-animation{
-  height: 100%;
+  height: 100vh;
   width: 95vw;
   position: absolute;
+  top: 0;
   right: 0;
-  border: 1px solid black ;
   transition: 1s;
 
 }
 
+/*mobile view journey button's*/
+@media (max-width: 600px) {
+  .journey-buttons:nth-child(1){
+    font-size: 10vw;
+  }
+    .journey-buttons:nth-child(2){
+    font-size: 7vw;
+  }
+    .journey-buttons:nth-child(3){
+    font-size: 8vw;
+  }
+    .journey-buttons:nth-child(4){
+    font-size: 10vw;
+  }
+    .journey-buttons:nth-child(5){
+    font-size: 6vw;
+  }
+    .journey-buttons:nth-child(6){
+    font-size: 7vw;
+  }
+  }
+
+/*body*/
  .journeypage-bg{
+   font-family: serif, sans-serif;
    background: linear-gradient(135deg, #0015bc, #000000, #008001);
       background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
+  font-family: Arial, sans-serif;
  }
