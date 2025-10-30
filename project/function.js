@@ -2,6 +2,7 @@ let phone_media = window.matchMedia("(max-width: 600px)")
 //popup side menu
 let popupmenu = document.getElementById("popup-menu");
 let menubox = document.getElementById("popup-menu-box");
+
 let changeicon= document.getElementById("change-icon");
 let push= document.getElementById("push_content");
 
@@ -35,7 +36,7 @@ function popup_menu() {
       menubox.style.width = "0";
       changeicon.innerHTML = "&#9776;";
       if (push) {
-        push.style.width = "95vw";
+        push.style.width = "100vw";
       }
     }
   }
@@ -56,6 +57,7 @@ let learninfo = document.getElementById("popup-learn");
 function popup_menu_contact() {
   if (contactinfo.style.height === "0px") {
     contactinfo.style.height = "90%";
+    
     aboutinfo.style.height = "0";
     teaminfo.style.height = "0";
     learninfo.style.height = "0";

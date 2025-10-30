@@ -17,15 +17,23 @@ html{
   height: 8vh;
   width: 100vw;
   background: linear-gradient(100deg, #1055C9, #000000, #41A67E 150%);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   display: flex;
   align-items: center;
+  z-index: 2;
 }
 .iamthecode-logo{
   position: absolute ;
+  right: 1vw;
+  width: auto;
+  height: 220%;
+  display: block;
+}
+.iamthecode-logo-main {
+  position: absolute;
   left: 1vw;
   width: auto;
   height: 220%;
@@ -47,6 +55,7 @@ html{
   flex-direction: row;
   overflow: hidden;
   transition: 1s;
+  z-index: 3;
 }
 
 .menu-box{
@@ -78,9 +87,10 @@ html{
   margin: 0;
   border: none;
   color: white;
+  z-index: 4;
 }
 .menu-button{
-  z-index: 5;
+  z-index: 6;
   display: flex;
   top: 3vh;
   background: none;
@@ -95,8 +105,8 @@ font-family: serif, sans-serif;
 /*side menu responsive*/
 @media (max-width: 600px) {
   .menu-container{
-    width: 8vw;
-    z-index: 1;
+    width: 7.5vw;
+    z-index: 2;
   }
     .menu-button{
     font-size: 7vw ;}
@@ -115,7 +125,7 @@ font-family: serif, sans-serif;
   top: 55%;
   display: flex;
   justify-content: center;
-  z-index: 1;
+  z-index: 3;
   pointer-events: none;
 }
 .menu-info-animation{
@@ -142,7 +152,7 @@ font-family: serif, sans-serif;
   padding-right: 1rem;
   display: flex;
   justify-content: center;
-  border-radius: 1rem;
+  border-radius: 0 0 1rem 1rem;
 }
 /*info content*/
 .menu-info-img{
@@ -213,21 +223,18 @@ justify-content: center;
   top: 8%;
   transition: 1s;
   left: 3%;
-  overflow-y: scroll;
-  scroll-snap-align: y mandatory;
   scroll-behavior: smooth;
-
+  
+  
 }
 
 
 .journey-buttons{
   font-family: serif, sans-serif;
-  height: 26%;
+  width: 80%;
   background-color: #3674b5;
   aspect-ratio: 1.5/1;
   transition: 1s;
-  scroll-snap-align: start;
-scroll-margin-top: 80px;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -243,37 +250,42 @@ background-repeat: no-repeat;
     1px 1px 0 black;  
     color:white;
     overflow: hidden;
+  font-size: 20%;
 }
+
+
 /*journey button's design*/
 .journey-buttons:nth-child(1){
+  margin-top: 65%;
   background-image: url(encounter.png);
   background-color: #FFD700;
-  font-size: 10vw;
+  
 }
 .journey-buttons:nth-child(2){
   background-image: url(technical_setup.png);
   background-color: #C0C0C0;
-  font-size: 7vw;
+  
 }
 .journey-buttons:nth-child(3){
   background-image: url(focus&absorb.png);
   background-color: #FFB700;
-  font-size: 8vw;
+  
 }
 .journey-buttons:nth-child(4) {
   background-image: url(presence.png);
   background-color: #FFC107;
-  font-size: 10vw;
+  
 }
 .journey-buttons:nth-child(5) {
   background-image: url(task_coordination.png);
   background-color: #DAF7A6;
-  font-size: 6vw;
+  
 }
 .journey-buttons:nth-child(6) {
   background-image: url(accomplishment.png);
   background-color: #FFD700;
-  font-size: 7vw;
+  
+  margin-bottom: 65%;
 }
 .journey-buttons-link{
   text-decoration: none;
@@ -282,13 +294,15 @@ background-repeat: no-repeat;
 }
 .journey-buttons-animation{
   height: 100vh;
-  width: 95vw;
+  width: 100vw;
   position: absolute;
-  top: 0;
+  bottom: 0;
   right: 0;
   transition: 1s;
-
 }
+
+
+
 
 /*mobile view journey button's*/
 @media (max-width: 600px) {
@@ -310,9 +324,46 @@ background-repeat: no-repeat;
     .journey-buttons:nth-child(6){
     font-size: 7vw;
   }
+  .journey-options-box{
+    overflow-y: scroll;
+scroll-snap-align: y mandatory;
+scroll-behavior: smooth;
+left: auto;
+  }
+  .journey-buttons-animation{
+    display: flex;
+    justify-content: center;
+  }
+   .journey-buttons {
+     animation-duration: 1s;
+     scroll-snap-align: start;
+     scroll-behavior: smooth;
+     animation: buttons_animation both;
+  animation-timeline: view();
+  animation-range: entry 0% exit 100%;
+  font-size: 20%;
+  flex-direction: column;}
+  
+  @keyframes buttons_animation {
+  0% {
+    opacity: 0;
+    width: 50%;
+  font-size: 40%;
+  }
+  50% {
+    opacity: 1;
+    width: 80%;
+    font-size: 100%;
+  }
+  100% {
+    opacity: 0;
+    width: 50%;
+    font-size: 40%;
+  }
+}
   }
 
-/*body*/
+/*body journey page*/
  .journeypage-bg{
    font-family: serif, sans-serif;
    background: linear-gradient(135deg, #0015bc, #000000, #008001);
@@ -322,3 +373,151 @@ background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: Arial, sans-serif;
  }
+ 
+ /*journey's content*/
+
+
+.journey-body{
+  font-size: 12px;
+  font-family: serif, sans-serif;
+ background: linear-gradient(140deg, black 70%, white);
+ background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.journey-content{
+width: 100vw;
+height: 92vh;
+position: absolute;
+bottom: 0;
+right: 0;
+display: flex;
+  flex-direction: column;
+  align-items: center;
+transition: 1s;
+scroll-behavior: smooth;
+}
+
+.journey-content-bg{
+  width: 91.1%;
+  height: auto;
+  display: flex;
+  padding: 1rem;
+align-items: center;
+  text-indent: 5%;
+  font-size: 1rem;
+  border-radius: 1rem;
+  margin: 1rem;
+  flex-direction: column;
+  color: white;
+  position: relative;
+}
+.journey-content-bg::before {
+  content: "";
+  background: #202120;
+  opacity: 60%;
+  z-index: 0;
+  position: absolute;
+  inset: 0;
+}
+.journey-content-bg > * {
+  position: relative;
+  z-index: 1; 
+}
+
+.journey-img{
+  width: 60%;
+  height: auto;
+  border-radius: 1rem;
+  opacity: 100%;
+}
+
+.header-scroll-animation{
+  animation: imganimation both;
+  animation-timeline: view(50% 20%);
+  animation-duration: 0.5s;
+}
+
+.img-scroll-animation{
+  animation: imganimation both;
+  animation-timeline: view(40% 20%); 
+  animation-duration: 1s;
+}
+
+@keyframes imganimation {
+ from{
+    opacity: 0;
+    scale: .95;
+    translate: 0 4rem;
+  }
+  
+  to{
+    opacity: 1;
+    scale: 1;
+    translate: 0 0;
+  }
+}
+.text-scroll-animation{
+  animation: textanimation both;
+  animation-timeline: view(30% 15%);
+  opacity: 100%;
+  animation-duration: 1.5s;
+}
+
+@keyframes textanimation {
+  from {
+  opacity: 0;
+  scale: .95;
+  translate: 0 4rem;
+}
+
+to {
+  opacity: 1;
+  scale: 1;
+  translate: 0 0;
+}
+}
+
+/*footer*/
+.site-footer {
+  
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  
+  font-size: 0.9rem;
+}
+
+.site-footer a {
+  color: #ffd859;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+/*back button*/
+.back-button {
+  height: auto;
+  width: 15%;
+  aspect-ratio: 2/1;
+  background: darkblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1% solid black;
+  border-radius: 1rem;
+  margin-left: 2vw;
+}
+.back-link{
+  font-size: 5vw;
+  text-decoration: none;
+  color: white;
+}
+
+
+
