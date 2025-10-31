@@ -1,5 +1,6 @@
 
 /*body*/
+
 .main{
   font-family: serif, sans-serif;
     background: linear-gradient(135deg, #0015bc, #000000, #008001);
@@ -120,7 +121,7 @@ font-family: serif, sans-serif;
 .popup-info-container{
   height: 30vh;
   width: 20vw;
-  position: absolute;
+  position: fixed;
   left: 0.09%;
   top: 55%;
   display: flex;
@@ -250,7 +251,8 @@ background-repeat: no-repeat;
     1px 1px 0 black;  
     color:white;
     overflow: hidden;
-  font-size: 20%;
+  white-space: nowrap;
+  font-size: 100%;
 }
 
 
@@ -306,24 +308,7 @@ background-repeat: no-repeat;
 
 /*mobile view journey button's*/
 @media (max-width: 600px) {
-  .journey-buttons:nth-child(1){
-    font-size: 10vw;
-  }
-    .journey-buttons:nth-child(2){
-    font-size: 7vw;
-  }
-    .journey-buttons:nth-child(3){
-    font-size: 8vw;
-  }
-    .journey-buttons:nth-child(4){
-    font-size: 10vw;
-  }
-    .journey-buttons:nth-child(5){
-    font-size: 6vw;
-  }
-    .journey-buttons:nth-child(6){
-    font-size: 7vw;
-  }
+
   .journey-options-box{
     overflow-y: scroll;
 scroll-snap-align: y mandatory;
@@ -341,7 +326,6 @@ left: auto;
      animation: buttons_animation both;
   animation-timeline: view();
   animation-range: entry 0% exit 100%;
-  font-size: 20%;
   flex-direction: column;}
   
   @keyframes buttons_animation {
@@ -350,10 +334,10 @@ left: auto;
     width: 50%;
   font-size: 40%;
   }
-  50% {
+  60% {
     opacity: 1;
     width: 80%;
-    font-size: 100%;
+    font-size: 150%;
   }
   100% {
     opacity: 0;
@@ -428,7 +412,7 @@ align-items: center;
 }
 
 .journey-img{
-  width: 60%;
+  width: 90%;
   height: auto;
   border-radius: 1rem;
   opacity: 100%;
@@ -461,9 +445,11 @@ align-items: center;
 }
 .text-scroll-animation{
   animation: textanimation both;
-  animation-timeline: view(30% 15%);
+  animation-timeline: view();
+animation-range: entry 0% exit 10%;
   opacity: 100%;
   animation-duration: 1.5s;
+  text-indent: 0;
 }
 
 @keyframes textanimation {
@@ -483,12 +469,13 @@ to {
 /*footer*/
 .site-footer {
   
-  width: 100%;
+  width: 100vw;
   background-color: #333;
   color: white;
   text-align: center;
-  
+  white-space: nowrap;
   font-size: 0.9rem;
+  text-indent: 0;
 }
 
 .site-footer a {
@@ -521,3 +508,11 @@ to {
 
 
 
+h1, h2{
+ text-align: center;
+ text-indent: 0;
+
+}
+.indent{
+  text-indent: 1rem;
+}
