@@ -3,11 +3,27 @@
 
 .main{
   font-family: serif, sans-serif;
-    background: linear-gradient(135deg, #0015bc, #000000, #008001);
+    background: linear-gradient(135deg, #0015bc, #000000, #008001, #000000, #0015bc, #000000, #008001
+    );
       background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+  
+  background-size: 600vw 100vh;
   background-attachment: fixed;
+  animation: main-bg-animation 30s ease infinite;
+}
+@keyframes main-bg-animation {
+  0%{
+    background-position: 0% 50%;
+  }
+  
+  50% {
+  background-position: 100% 50%;
+  }
+  
+  100% {
+  background-position: 0% 50%;
+}
+
 }
 html{
   font-size: 16px;
@@ -72,6 +88,7 @@ html{
   align-items: center;
 }
 .menu-open-close{
+  cursor: pointer;
   opacity: 90%;
   display: flex;
   justify-content: center;
@@ -91,6 +108,7 @@ html{
   z-index: 4;
 }
 .menu-button{
+  cursor: pointer;
   z-index: 6;
   display: flex;
   top: 3vh;
@@ -101,7 +119,7 @@ white-space: nowrap;
 font-size: 3vw ;
 color: white;
 font-family: serif, sans-serif;
-
+transition: 1s;
 }
 /*side menu responsive*/
 @media (max-width: 600px) {
@@ -115,7 +133,41 @@ font-family: serif, sans-serif;
       height: 4%;
       font-size: 7vw;
     }
+    
   }
+  
+  /*hover/active menu*/
+      .menu-button:active {
+      transition: 0.1ms;
+      background: #091380;
+      width: 90%;
+      aspect-ratio: 1/0.05;
+      border-radius: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  .menu-open-close:active {
+  background: #1055C9;
+}
+
+ .menu-button:hover{
+   transition: 0.5s;
+   font-size: 4vw;
+   background: #091380;
+   width: 90%;
+   aspect-ratio: 2/0.30;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 1rem;
+   color: #1055C9;
+ }
+.menu-open-close:hover{
+  background: #1055C9;
+  color: #091380 ;
+}
+
     
 /*popup info*/
 .popup-info-container{
@@ -182,33 +234,95 @@ font-family: serif, sans-serif;
   align-items: center;
   transition: 0.2s;
 }
-.next-page:hover{
-    width: 95%;
-  height: 35%;
-  font-size: 30wv;
-}
+
 .next-page{
   font-size: 2.5vw;
   width: 100vw;
   aspect-ratio: 3/0.5;
   background-color: black;
- border: 1rem solid #032752;
+ position: relative;
  border-radius: 20rem;
  text-decoration: none ;
  display: flex;
  justify-content: center;
  align-items: center;
  color: white;
- transition: 1s;
+ transition: 0.1s;
+ border: 1rem solid #1C2373;
 }
+
+
+.next-page:active{
+  background: transparent;
+  transition: 1ms;
+  color: black;
+}
+  
+  .next-page:hover{
+    border: none;
+  }
+  
+.next-page:hover:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  filter: blur(3px); 
+  border-radius: inherit;
+width: 75vw;
+aspect-ratio: 0.8/0.17;
+  background: linear-gradient(135deg, #0B61C7, #17DE19, #0B61C7, #17DE19, #0B61C7, #17DE19
+  );
+  background-size: 300% 100%;
+background-position: 0% 50%;
+animation: button_animation 15s linear infinite;
+}
+
+.next-page:active::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  filter: blur(3px); 
+  border-radius: inherit;
+width: 75vw;
+aspect-ratio: 0.8/0.17;
+  background: linear-gradient(135deg, #0B61C7, #17DE19, #0B61C7, #17DE19, #0B61C7, #17DE19
+  );
+  
+  background-size: 300% 100%;
+  background-position: 0% 50%;
+  animation: button_animation 20s linear infinite;
+}
+  
+@keyframes button_animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 @media (max-width: 600px) {
 .next-page{
   width: 200vw;
   font-size: 5vw;
-  border: 0.1rem solid #032752;
+  border: 0.1rem solid #1C2373;
 }
+
   }
-    
+  @media (hover: hover) and (pointer: fine) {
+  .next-page:hover {
+  width: 110%;
+  color: black;
+  font-size: 3wv;
+  border: 1.2rem solid #0d752e;
+  background: #085420;
+  }
+  }
 /*2nd page journey button's*/
 .journey-options-box{
   height: 90%;
@@ -311,9 +425,8 @@ background-repeat: no-repeat;
 
   .journey-options-box{
     overflow-y: scroll;
-scroll-snap-align: y mandatory;
 scroll-behavior: smooth;
-left: auto;
+scroll-snap-type: y mandatory;
   }
   .journey-buttons-animation{
     display: flex;
@@ -321,8 +434,7 @@ left: auto;
   }
    .journey-buttons {
      animation-duration: 1s;
-     scroll-snap-align: start;
-     scroll-behavior: smooth;
+     scroll-snap-align: center;
      animation: buttons_animation both;
   animation-timeline: view();
   animation-range: entry 0% exit 100%;
@@ -384,6 +496,10 @@ transition: 1s;
 scroll-behavior: smooth;
 }
 
+.journey-content-bg:nth-child(1){
+  margin-top: 15%;
+}
+
 .journey-content-bg{
   width: 91.1%;
   height: auto;
@@ -398,7 +514,7 @@ align-items: center;
   color: white;
   position: relative;
 }
-.journey-content-bg::before {
+.journey-content-bg:before {
   content: "";
   background: #202120;
   opacity: 60%;
@@ -417,6 +533,15 @@ align-items: center;
   border-radius: 1rem;
   opacity: 100%;
 }
+h1, h2{
+ text-align: center;
+ text-indent: 0;
+
+}
+.indent{
+  text-indent: 1rem;
+}
+
 
 .header-scroll-animation{
   animation: imganimation both;
@@ -482,6 +607,7 @@ to {
   color: #ffd859;
   text-decoration: none;
   margin: 0 10px;
+  cursor: pointer;
 }
 
 .site-footer a:hover {
@@ -492,27 +618,67 @@ to {
   height: auto;
   width: 15%;
   aspect-ratio: 2/1;
-  background: darkblue;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1% solid black;
+  border: 0.1rem solid #05155F;
   border-radius: 1rem;
   margin-left: 2vw;
+  position: relative;
+  transition-timing-function: 0.5s ease ;
+  overflow: hidden;
 }
+.back-button::before {
+  content: "Back";
+  position: absolute;
+  inset: 0;  
+  color: #05155F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  transition: 0.3s;
+    z-index: -1;
+    font-size: 130%;
+    
+}
+
+.back-button:hover{
+  border: 0.1rem solid white;
+}
+.back-button:hover::before {
+  content: "‹";
+  font-size: 200%;
+  color: white;
+  border-radius: 1rem;
+  z-index: -1;
+  transition: 0.3s;
+}
+@keyframes back_animation {
+  
+}
+.back-button:active {
+  border: 0.1rem solid white;
+}
+.back-button:active::before {
+  content: "‹";
+  font-size: 200%;
+  color: white;
+  border-radius: 1rem;
+  z-index: -1;
+  transition: 0.3s;
+}
+
+
+
 .back-link{
+  position: relative;
   font-size: 5vw;
   text-decoration: none;
   color: white;
+  height: 20vh;
+  width: 20vw;
 }
 
 
 
-h1, h2{
- text-align: center;
- text-indent: 0;
-
-}
-.indent{
-  text-indent: 1rem;
-}
