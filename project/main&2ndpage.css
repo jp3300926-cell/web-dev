@@ -1,5 +1,9 @@
 
-/*body*/
+/* main body*/
+
+body{
+  overflow-x: hidden;
+}
 
 .main{
   font-family: serif, sans-serif;
@@ -11,6 +15,7 @@
   background-attachment: fixed;
   animation: main-bg-animation 30s ease infinite;
 }
+/*main background animation*/
 @keyframes main-bg-animation {
   0%{
     background-position: 0% 50%;
@@ -29,7 +34,7 @@ html{
   font-size: 16px;
 }
 
-/*upper box*/
+/*-----upper box-----*/
 .logo-container{
   height: 8vh;
   width: 100vw;
@@ -56,12 +61,14 @@ html{
   height: 220%;
   display: block;
 }
+
+/*mobile view logo*/
 @media (max-width: 600px) {
   .iamthecode-logo{
     height: 200%;
   }
 }
-/*side menu*/
+/*-----side menu-----*/
 .menu-container{
   position: fixed;
   top:8vh;
@@ -121,7 +128,7 @@ color: white;
 font-family: serif, sans-serif;
 transition: 1s;
 }
-/*side menu responsive*/
+/*mobile view side menu*/
 @media (max-width: 600px) {
   .menu-container{
     width: 7.5vw;
@@ -137,6 +144,7 @@ transition: 1s;
   }
   
   /*hover/active menu*/
+  /*mobile*/
       .menu-button:active {
       transition: 0.1ms;
       background: #091380;
@@ -151,6 +159,7 @@ transition: 1s;
   background: #1055C9;
 }
 
+/*desktop*/
  .menu-button:hover{
    transition: 0.5s;
    font-size: 4vw;
@@ -169,7 +178,7 @@ transition: 1s;
 }
 
     
-/*popup info*/
+/*-----popup info-----*/
 .popup-info-container{
   height: 30vh;
   width: 20vw;
@@ -213,6 +222,8 @@ transition: 1s;
   height: auto;
   border-radius: 1rem;
 }
+
+/*mobile view menu info*/
 @media (max-width: 600px) {
   .popup-info-container{
     width: 68vw;
@@ -222,7 +233,7 @@ transition: 1s;
     font-size: 0.rem;
   }
 }
-/*button to next page*/
+/*-----button to next page-----*/
 .next-page-container{
   position: absolute;
   left: 14%;
@@ -251,31 +262,19 @@ transition: 1s;
  border: 1rem solid #1C2373;
 }
 
-
-.next-page:active{
-  background: transparent;
-  transition: 1ms;
-  color: black;
-}
-  
-  .next-page:hover{
-    border: none;
+/*mobile view next page*/
+@media (max-width: 600px) {
+  .next-page {
+    width: 200vw;
+    font-size: 5vw;
+    border: 0.1rem solid #1C2373;
   }
   
-.next-page:hover:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  filter: blur(3px); 
-  border-radius: inherit;
-width: 75vw;
-aspect-ratio: 0.8/0.17;
-  background: linear-gradient(135deg, #0B61C7, #17DE19, #0B61C7, #17DE19, #0B61C7, #17DE19
-  );
-  background-size: 300% 100%;
-background-position: 0% 50%;
-animation: button_animation 15s linear infinite;
 }
+
+/*hover/active next-page*/
+
+/*mobile*/
 
 .next-page:active::before {
   content: "";
@@ -293,12 +292,41 @@ aspect-ratio: 0.8/0.17;
   background-position: 0% 50%;
   animation: button_animation 20s linear infinite;
 }
+
+
+/*desktop*/
+.next-page:active{
+  background: transparent;
+  transition: 1ms;
+  color: black;
+}
   
-@keyframes button_animation {
+  .next-page:hover{
+    border: none;
+  }
+  
+.next-page:hover:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  filter: blur(7px); 
+  border-radius: inherit;
+width: 75vw;
+aspect-ratio: 0.8/0.17;
+  background: linear-gradient(135deg, #0B61C7, #17DE19, #0B61C7, #17DE19, #0B61C7, #17DE19
+  );
+  background-size: 300% 100%;
+background-position: 0% 50%;
+animation: next_page_animation 15s linear infinite;
+}
+
+
+  
+  @keyframes next_page_animation {
   0% {
     background-position: 0% 50%;
   }
-  50% {
+  60% {
     background-position: 100% 50%;
   }
   100% {
@@ -306,49 +334,71 @@ aspect-ratio: 0.8/0.17;
   }
 }
 
-@media (max-width: 600px) {
-.next-page{
-  width: 200vw;
-  font-size: 5vw;
-  border: 0.1rem solid #1C2373;
+
+
+/*=====2nd page=====*/
+/*-----journey button's-----*/
+
+/*body journey page*/
+.journeypage-bg {
+  font-family: serif, sans-serif;
+  background: linear-gradient(135deg, #0015bc, #000000, #008001);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
 }
 
-  }
-  @media (hover: hover) and (pointer: fine) {
-  .next-page:hover {
-  width: 110%;
-  color: black;
-  font-size: 3wv;
-  border: 1.2rem solid #0d752e;
-  background: #085420;
-  }
-  }
-/*2nd page journey button's*/
 .journey-options-box{
-  height: 90%;
+  height: 30%;
   width: 90%;
     display: flex;
 align-items: center;
-justify-content: center;
-  position: absolute ;
-  gap: 2%;
-  overflow: hidden;
-  flex-wrap: wrap;
-  padding: 2px;
-  top: 8%;
+  position: relative ;
+  gap: 11%;
+  border-top: 1rem solid white;
+  border-bottom: 1rem solid white;
+  z-index: 1;
   transition: 1s;
-  left: 3%;
   scroll-behavior: smooth;
+  overflow-x: scroll;
+scroll-snap-type: x mandatory;
+flex-direction: row;
   
-  
+}
+
+.journey-options-box::scroll-button(left):disabled, .journey-options-box::scroll-button(right):disabled{
+  opacity: 50%;
+}
+
+.journey-options-box::scroll-button(left), .journey-options-box::scroll-button(right){
+  font-size: 5rem;
+  z-index: 2;
+  height: 4vh;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: #091380;
+  border: 0.3rem solid white;
+  color: white;
+}
+
+.journey-options-box::scroll-button(left){
+  content: "‹";
+  position: absolute;
+  left: 15vw;  
+}
+.journey-options-box::scroll-button(right) {
+  content: "›";
+  position: absolute;
+  right: 15vw;   
 }
 
 
 .journey-buttons{
   font-family: serif, sans-serif;
-  width: 80%;
-  background-color: #3674b5;
-  aspect-ratio: 1.5/1;
+  flex: 0 0 80%;
+  height: 80%;
   transition: 1s;
 display: flex;
 justify-content: center;
@@ -356,8 +406,8 @@ align-items: center;
 background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  background-size: auto 100%;
-  border-radius: 1rem;
+  text-align: center;
+  border-radius: 4rem;
     text-shadow: 
     1px 1px 0 black,
     1px 1px 0 black,
@@ -365,17 +415,16 @@ background-repeat: no-repeat;
     1px 1px 0 black;  
     color:white;
     overflow: hidden;
-  white-space: nowrap;
-  font-size: 100%;
+  scroll-snap-align: center;
+  font-size: 500%;
 }
 
 
 /*journey button's design*/
 .journey-buttons:nth-child(1){
-  margin-top: 65%;
   background-image: url(encounter.png);
   background-color: #FFD700;
-  
+  margin-left: 70%;
 }
 .journey-buttons:nth-child(2){
   background-image: url(technical_setup.png);
@@ -400,8 +449,7 @@ background-repeat: no-repeat;
 .journey-buttons:nth-child(6) {
   background-image: url(accomplishment.png);
   background-color: #FFD700;
-  
-  margin-bottom: 65%;
+  margin-right: 70%;
 }
 .journey-buttons-link{
   text-decoration: none;
@@ -415,6 +463,9 @@ background-repeat: no-repeat;
   bottom: 0;
   right: 0;
   transition: 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -422,55 +473,92 @@ background-repeat: no-repeat;
 
 /*mobile view journey button's*/
 @media (max-width: 600px) {
-
+  
+  .journey-options-box::scroll-button(left), .journey-options-box::scroll-button(right){
+    display: none;
+  }
+  
+.journey-buttons:nth-child(1) {
+  margin-top: 70%;
+  margin-left: 0;
+}
+.journey-buttons:nth-child(6) {
+  margin-bottom: 70%;
+  margin-right: 0;
+}
   .journey-options-box{
+    border: none;
+    top: 8%;
+height: 90%;
+width: 90%;
+left: 3%;
+    gap: 5%;
+  
     overflow-y: scroll;
 scroll-behavior: smooth;
 scroll-snap-type: y mandatory;
+flex-direction: column;
+align-items: center;
   }
   .journey-buttons-animation{
     display: flex;
     justify-content: center;
+align-items: unset;
   }
    .journey-buttons {
+     font-size: 200%;
+     border-radius: 2rem;
+     flex: 0 0 25%;
+     width: 80%;
      animation-duration: 1s;
      scroll-snap-align: center;
      animation: buttons_animation both;
   animation-timeline: view();
-  animation-range: entry 0% exit 100%;
-  flex-direction: column;}
+  animation-range: entry 0% exit 100%;}
   
   @keyframes buttons_animation {
   0% {
     opacity: 0;
-    width: 50%;
-  font-size: 40%;
+    transform: scale(0);
   }
   60% {
     opacity: 1;
-    width: 80%;
-    font-size: 150%;
+    transform: scale(1);
   }
   100% {
     opacity: 0;
-    width: 50%;
-    font-size: 40%;
+    transform: scale(0);;
   }
 }
   }
+  /*hover/active journey option*/
+/*mobile*/
+.journey-options-box::scroll-button(left):active {
+  background: #4650C4;
+  color: #091380;
+  border: 0.3rem solid #091380;
+}
 
-/*body journey page*/
- .journeypage-bg{
-   font-family: serif, sans-serif;
-   background: linear-gradient(135deg, #0015bc, #000000, #008001);
-      background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-attachment: fixed;
-  font-family: Arial, sans-serif;
- }
+.journey-options-box::scroll-button(right):active {
+  background: #4650C4;
+  color: #091380;
+  border: 0.3rem solid #091380;
+}
+
+/*desktop*/
+.journey-options-box::scroll-button(left):hover{
+  background: #4650C4;
+  color: #091380;
+  border: 0.3rem solid #091380;
+}
+
+.journey-options-box::scroll-button(right):hover{
+  background: #4650C4;
+  color: #091380;
+  border: 0.3rem solid #091380;
+}
  
- /*journey's content*/
+ /*-----journey's content-----*/
 
 
 .journey-body{
@@ -483,7 +571,7 @@ scroll-snap-type: y mandatory;
   background-attachment: fixed;
 }
 
-.journey-content{
+.journey-content1, .journey-content2, .journey-content3, .journey-content4, .journey-content5, .journey-content6{
 width: 100vw;
 height: 92vh;
 position: absolute;
@@ -504,9 +592,7 @@ scroll-behavior: smooth;
   width: 91.1%;
   height: auto;
   display: flex;
-  padding: 1rem;
-align-items: center;
-  text-indent: 5%;
+  padding: 1.5rem;
   font-size: 1rem;
   border-radius: 1rem;
   margin: 1rem;
@@ -514,6 +600,7 @@ align-items: center;
   color: white;
   position: relative;
 }
+
 .journey-content-bg:before {
   content: "";
   background: #202120;
@@ -528,6 +615,8 @@ align-items: center;
 }
 
 .journey-img{
+  display: flex;
+  align-self: center;
   width: 90%;
   height: auto;
   border-radius: 1rem;
@@ -549,6 +638,12 @@ h1, h2{
   animation-duration: 0.5s;
 }
 
+/*content style*/
+.journey-content-bg p{
+  display: flex;
+  align-self: flex-start;
+}
+
 .img-scroll-animation{
   animation: imganimation both;
   animation-timeline: view(40% 20%); 
@@ -558,7 +653,7 @@ h1, h2{
 @keyframes imganimation {
  from{
     opacity: 0;
-    scale: .95;
+    scale: .50;
     translate: 0 4rem;
   }
   
@@ -571,7 +666,7 @@ h1, h2{
 .text-scroll-animation{
   animation: textanimation both;
   animation-timeline: view();
-animation-range: entry 0% exit 10%;
+animation-range: entry 0% exit 5%;
   opacity: 100%;
   animation-duration: 1.5s;
   text-indent: 0;
@@ -591,9 +686,9 @@ to {
 }
 }
 
-/*footer*/
+/*-----footer-----*/
 .site-footer {
-  
+  padding: 6% 0 6% 0;
   width: 100vw;
   background-color: #333;
   color: white;
@@ -613,7 +708,11 @@ to {
 .site-footer a:hover {
   text-decoration: underline;
 }
-/*back button*/
+
+@media (max-width: 600px) {
+  
+}
+/*-----back button-----*/
 .back-button {
   height: auto;
   width: 15%;
@@ -643,20 +742,18 @@ to {
     
 }
 
-.back-button:hover{
-  border: 0.1rem solid white;
-}
-.back-button:hover::before {
-  content: "‹";
-  font-size: 200%;
+.back-link {
+  position: relative;
+  font-size: 5vw;
+  text-decoration: none;
   color: white;
-  border-radius: 1rem;
-  z-index: -1;
-  transition: 0.3s;
+  height: 20vh;
+  width: 20vw;
 }
-@keyframes back_animation {
-  
-}
+
+/*hover/active back button*/
+
+/*mobile*/
 .back-button:active {
   border: 0.1rem solid white;
 }
@@ -669,16 +766,22 @@ to {
   transition: 0.3s;
 }
 
-
-
-.back-link{
-  position: relative;
-  font-size: 5vw;
-  text-decoration: none;
-  color: white;
-  height: 20vh;
-  width: 20vw;
+/*desktop*/
+.back-button:hover{
+  border: 0.1rem solid white;
 }
+.back-button:hover::before {
+  content: "‹";
+  font-size: 200%;
+  color: white;
+  border-radius: 1rem;
+  z-index: -1;
+  transition: 0.3s;
+}
+
+
+
+
 
 
 
