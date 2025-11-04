@@ -3,11 +3,11 @@ let phone_media = window.matchMedia("(max-width: 600px)")
 let popupmenu = document.getElementById("popup-menu");
 let menubox = document.getElementById("popup-menu-box");
 
-let changeicon= document.getElementById("change-icon");
-let push= document.getElementById("push_content");
+let changeicon = document.getElementById("change-icon");
+let push = document.getElementById("push_content");
 
 function popup_menu() {
-
+  
   if (phone_media.matches) {
     // mobile 
     if (popupmenu.style.width === "7.5vw") {
@@ -21,12 +21,12 @@ function popup_menu() {
       changeicon.innerHTML = "&#9776;";
       
     }
-
+    
   } else {
     // desktop 
     if (popupmenu.style.width === "2.5vw") {
       popupmenu.style.width = "20.6vw";
-      menubox.style.width = "18vw";
+      menubox.style.width = "18.2vw";
       changeicon.innerHTML = "«";
       if (push) {
         push.style.width = "77vw";
@@ -46,7 +46,7 @@ function popup_menu() {
 let contactinfo = document.getElementById("popup-contact");
 
 
-let aboutinfo= document.getElementById("popup-about");
+let aboutinfo = document.getElementById("popup-about");
 
 
 let teaminfo = document.getElementById("popup-team");
@@ -80,9 +80,9 @@ function popup_menu_about() {
 function popup_menu_team() {
   if (teaminfo.style.height === "0px") {
     contactinfo.style.height = "0";
-aboutinfo.style.height = "0";
-teaminfo.style.height = "90%";
-learninfo.style.height = "0";
+    aboutinfo.style.height = "0";
+    teaminfo.style.height = "90%";
+    learninfo.style.height = "0";
   } else {
     teaminfo.style.height = "0";
   }
@@ -91,9 +91,9 @@ learninfo.style.height = "0";
 function popup_menu_learn() {
   if (learninfo.style.height === "0px") {
     contactinfo.style.height = "0";
-aboutinfo.style.height = "0";
-teaminfo.style.height = "0";
-learninfo.style.height = "90%";
+    aboutinfo.style.height = "0";
+    teaminfo.style.height = "0";
+    learninfo.style.height = "90%";
   } else {
     learninfo.style.height = "0";
   }
@@ -101,10 +101,10 @@ learninfo.style.height = "90%";
 
 //all side menu close
 function info_menu_off() {
-contactinfo.style.height = "0";
-aboutinfo.style.height = "0";
-teaminfo.style.height = "0";
-learninfo.style.height = "0";
+  contactinfo.style.height = "0";
+  aboutinfo.style.height = "0";
+  teaminfo.style.height = "0";
+  learninfo.style.height = "0";
 }
 
 // Debugging block

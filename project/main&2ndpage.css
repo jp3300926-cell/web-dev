@@ -7,7 +7,7 @@ body{
 
 .main{
   font-family: serif, sans-serif;
-    background: linear-gradient(135deg, #0015bc, #000000, #008001, #000000, #0015bc, #000000, #008001
+    background: linear-gradient(135deg, #b6ecfd, #79c9f6, #b6ecfd,  #79c9f6, #b6ecfd
     );
       background-repeat: no-repeat;
   
@@ -38,7 +38,7 @@ html{
 .logo-container{
   height: 8vh;
   width: 100vw;
-  background: linear-gradient(100deg, #1055C9, #000000, #41A67E 150%);
+  background: #52a9e8;
   position: fixed;
   top: 0;
   left: 0;
@@ -87,7 +87,7 @@ html{
   width: 0;
   display: flex;
   flex-direction: column;
- background: linear-gradient(120deg, #05339C, #000000);
+ background: linear-gradient(120deg, #52a9e8, #008DF3);
   opacity: 90%;
   gap: 1vh;
   overflow: hidden;
@@ -101,9 +101,9 @@ html{
   justify-content: center;
   align-items: center;
   border-radius: 0 0.5rem 0.5rem 0;
-  height: 1.4%;
+  height: 5.2%;
   aspect-ratio: 1/1;
-  background: #091380;
+  background: #008DF3;
   position: absolute;
   right: 0;
   transition: 1s;
@@ -160,11 +160,12 @@ transition: 1s;
 }
 
 /*desktop*/
+@media (hover: hover) and (pointer: fine) {
  .menu-button:hover{
    transition: 0.5s;
-   font-size: 4vw;
+   font-size: 3.5vw;
    background: #091380;
-   width: 90%;
+   width: 91%;
    aspect-ratio: 2/0.30;
    display: flex;
    justify-content: center;
@@ -176,7 +177,7 @@ transition: 1s;
   background: #1055C9;
   color: #091380 ;
 }
-
+}
     
 /*-----popup info-----*/
 .popup-info-container{
@@ -202,7 +203,7 @@ transition: 1s;
 }
 .menu-info-box{
   height: 90%;
-  width: 80%;
+  width: 81%;
   background:#03368f;
   transition: 1s;
   position: absolute;
@@ -215,7 +216,9 @@ transition: 1s;
   display: flex;
   justify-content: center;
   border-radius: 0 0 1rem 1rem;
+  color: white;
 }
+
 /*info content*/
 .menu-info-img{
   width: 100%;
@@ -236,21 +239,22 @@ transition: 1s;
 /*-----button to next page-----*/
 .next-page-container{
   position: absolute;
-  left: 14%;
-  top: 25%;
-  width: 70%;
-  height: 40%;
+  left: 5%;
+  top: 15%;
+  width: 50%;
+  height: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: 0.2s;
+  border: 1px solid black;
 }
 
 .next-page{
-  font-size: 2.5vw;
-  width: 100vw;
-  aspect-ratio: 3/0.5;
-  background-color: black;
+  font-size: 2vw;
+ width: 1vw; 
+  height: 10vw;
+  background-color: #6bbaed;
  position: relative;
  border-radius: 20rem;
  text-decoration: none ;
@@ -259,15 +263,14 @@ transition: 1s;
  align-items: center;
  color: white;
  transition: 0.1s;
- border: 1rem solid #1C2373;
 }
+
 
 /*mobile view next page*/
 @media (max-width: 600px) {
   .next-page {
-    width: 200vw;
+    width: 40vw;
     font-size: 5vw;
-    border: 0.1rem solid #1C2373;
   }
   
 }
@@ -276,64 +279,36 @@ transition: 1s;
 
 /*mobile*/
 
-.next-page:active::before {
+.next-page:before {
   content: "";
   position: absolute;
   z-index: -1;
-
-  filter: blur(3px); 
   border-radius: inherit;
-width: 75vw;
-aspect-ratio: 0.8/0.17;
-  background: linear-gradient(135deg, #0B61C7, #17DE19, #0B61C7, #17DE19, #0B61C7, #17DE19
-  );
+  width: 100%;
+height: 100%;
+
+  transform: translatey(15%);
+  background: #008DF3;
   
-  background-size: 300% 100%;
-  background-position: 0% 50%;
-  animation: button_animation 20s linear infinite;
+}
+
+.next-page:after{
+  content: "";
+  position: absolute;
+  z-index: -2;
+  border-radius: inherit;
+  width: 100%;
+height: 100%;
+  padding: 1%;
+  transform: translatey(15%);
+  background: black;
 }
 
 
 /*desktop*/
-.next-page:active{
-  background: transparent;
-  transition: 1ms;
-  color: black;
-}
-  
-  .next-page:hover{
-    border: none;
-  }
-  
-.next-page:hover:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  filter: blur(7px); 
-  border-radius: inherit;
-width: 75vw;
-aspect-ratio: 0.8/0.17;
-  background: linear-gradient(135deg, #0B61C7, #17DE19, #0B61C7, #17DE19, #0B61C7, #17DE19
-  );
-  background-size: 300% 100%;
-background-position: 0% 50%;
-animation: next_page_animation 15s linear infinite;
-}
+@media (hover: hover) and (pointer: fine) {
 
-
-  
-  @keyframes next_page_animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  60% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
-
 
 
 /*=====2nd page=====*/
@@ -351,14 +326,13 @@ animation: next_page_animation 15s linear infinite;
 }
 
 .journey-options-box{
-  height: 30%;
-  width: 90%;
+  height: 50%;
+  width: 50%;
     display: flex;
 align-items: center;
   position: relative ;
   gap: 11%;
-  border-top: 1rem solid white;
-  border-bottom: 1rem solid white;
+ 
   z-index: 1;
   transition: 1s;
   scroll-behavior: smooth;
@@ -373,9 +347,10 @@ flex-direction: row;
 }
 
 .journey-options-box::scroll-button(left), .journey-options-box::scroll-button(right){
-  font-size: 5rem;
+  overflow: hidden;
+  font-size: 3rem;
   z-index: 2;
-  height: 4vh;
+  height:5vh;
   aspect-ratio: 1/1;
   border-radius: 50%;
   background: #091380;
@@ -546,6 +521,7 @@ align-items: unset;
 }
 
 /*desktop*/
+@media (hover: hover) and (pointer: fine) {
 .journey-options-box::scroll-button(left):hover{
   background: #4650C4;
   color: #091380;
@@ -557,7 +533,7 @@ align-items: unset;
   color: #091380;
   border: 0.3rem solid #091380;
 }
- 
+}
  /*-----journey's content-----*/
 
 
@@ -569,6 +545,7 @@ align-items: unset;
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
+  overflow-x: hidden;
 }
 
 .journey-content1, .journey-content2, .journey-content3, .journey-content4, .journey-content5, .journey-content6{
@@ -584,22 +561,24 @@ transition: 1s;
 scroll-behavior: smooth;
 }
 
-.journey-content-bg:nth-child(1){
-  margin-top: 15%;
+.journey-content1:nth-child(1) .journey-content-bg:nth-child(1) .journey-img:nth-child(1) {
+  width: 70%;
 }
 
 .journey-content-bg{
-  width: 91.1%;
+  width: 70%;
   height: auto;
   display: flex;
   padding: 1.5rem;
-  font-size: 1rem;
+  font-size: 2rem;
   border-radius: 1rem;
   margin: 1rem;
   flex-direction: column;
   color: white;
   position: relative;
 }
+
+
 
 .journey-content-bg:before {
   content: "";
@@ -617,7 +596,7 @@ scroll-behavior: smooth;
 .journey-img{
   display: flex;
   align-self: center;
-  width: 90%;
+  width: 20%;
   height: auto;
   border-radius: 1rem;
   opacity: 100%;
@@ -688,13 +667,13 @@ to {
 
 /*-----footer-----*/
 .site-footer {
-  padding: 6% 0 6% 0;
+  padding: 2% 0 2% 0;
   width: 100vw;
   background-color: #333;
   color: white;
   text-align: center;
   white-space: nowrap;
-  font-size: 0.9rem;
+  font-size: 1rem;
   text-indent: 0;
 }
 
@@ -715,13 +694,13 @@ to {
 /*-----back button-----*/
 .back-button {
   height: auto;
-  width: 15%;
+  width: 6%;
   aspect-ratio: 2/1;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 0.1rem solid #05155F;
-  border-radius: 1rem;
+  border-radius: 2rem;
   margin-left: 2vw;
   position: relative;
   transition-timing-function: 0.5s ease ;
@@ -738,15 +717,14 @@ to {
   background: transparent;
   transition: 0.3s;
     z-index: -1;
-    font-size: 130%;
+    font-size: 2vw;
     
 }
 
 .back-link {
   position: relative;
-  font-size: 5vw;
+  font-size: 0;
   text-decoration: none;
-  color: white;
   height: 20vh;
   width: 20vw;
 }
@@ -767,21 +745,75 @@ to {
 }
 
 /*desktop*/
+@media (hover: hover) and (pointer: fine) {
 .back-button:hover{
   border: 0.1rem solid white;
 }
 .back-button:hover::before {
   content: "‹";
-  font-size: 200%;
+  font-size: 3vw;
   color: white;
-  border-radius: 1rem;
   z-index: -1;
   transition: 0.3s;
 }
 
+}
+
+/*scroll style*/
+::-webkit-scrollbar {
+  width: 0.8vw; 
+}
 
 
+::-webkit-scrollbar-track {
+  background-color: #062452;
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #2057ab;
+   border-radius: 1rem;
+
+}
 
 
+.journey-body::-webkit-scrollbar-thumb{
+   background-color: #1c1c1c;
+   border-radius: 1rem;
+   
+}
 
+.journey-body::-webkit-scrollbar-track {
+  background-color: #363636;
+  border-radius: 0;
+  
+}
+ /*hover/active scroll*/
 
+/*mobile*/
+::-webkit-scrollbar-thumb:active {
+  background-color: #020b1a;
+}
+.journey-body::-webkit-scrollbar-thumb:active {
+  background-color: black;
+}
+/*desktop*/
+@media (hover: hover) and (pointer: fine) {
+::-webkit-scrollbar-thumb:hover {
+  background-color: #020b1a;
+}
+.journey-body::-webkit-scrollbar-thumb:hover {
+  background-color: black;
+}
+}
+
+@media (max-width: 600px) {
+  .journey-options-box::-webkit-scrollbar-track {
+  display: none;
+}
+
+.journey-options-box::-webkit-scrollbar-thumb {
+  display: none;
+
+}
+}
